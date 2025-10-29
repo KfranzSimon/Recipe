@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+.parent{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+     box-shadow: 0px 5px 8px rgba(0,0,0,0.2);
+     border-radius: 0px 0px 30px 30px;
+}
+.logo , .menu{
+    height: 10vh;
+    padding: 30px;
+}
+.logo{
+    align-self: flex-start;
+    width: 20%;
+    font-size: 10px;
+}
+.menu{
+    width: 80%;
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    flex-shrink: 3;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+}
+.specification{
+    width: 20%;
+    height: auto;
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 50px;
+    margin-left: 20px;
+}
+
+.food-list{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.food{
+    width: 30%;
+    height: 30vh;
+    background-color: black;
+    flex-shrink: 1;
+}
+@media (max-width: 575px) {
+    .food {
+        width: 80%;
+        height: 200px;
+    }
+    .menu {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .logo h1 {
+        font-size: 1.2rem; 
+    }
+}
