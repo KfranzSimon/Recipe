@@ -19,7 +19,7 @@ body {
     display: flex;
     align-items: center;
     box-shadow: 0px 5px 8px rgba(0,0,0,0.2);
-    background-color: #09660e;
+    background-color: #17B309;
     color: white;
     border-radius: 0px 0px 30px 30px;
 }
@@ -63,14 +63,69 @@ input:focus{
 }
 .food-types{
     list-style-type: none;
-    background-color: green;
+    background-color: transparent;
     color: wheat;
     width: 100%;
-    height: 100px;
+    height: 150px;
     border-radius: 20px;
-    padding: 2px 25px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: all 0.5s ease;
+    transition: all 0.5s ease;   
+    overflow: hidden;
+}
+.D-Immage{
+    width: 100%;
+    height: 100%;
+    background-image: url("../Images/Dessert.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.S-image{
+    width: 100%;
+    height: 100%;
+    background-image: url("../Images/Soups.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.M-course{
+    width: 100%;
+    height: 100%;
+    background-image: url("../Images/Food-types.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.Appetizers{
+    width: 100%;
+    height: 100%;
+    background-image: url("../Images/Appetizers2.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.Drinks{
+    width: 100%;
+    height: 100%;
+    background-image: url("../Images/beverages-cover.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 .types-main-container{
     justify-content: center;
@@ -95,8 +150,11 @@ input:focus{
 .image-container{
     width: 90%;
     height: 100%;
-    background-color: #bd1b0f;
     border-radius: 20px 60px ;
+    background-image: url("../Images/Fiesta.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 7px 7px rgba(29, 29, 29, 0.2);
 }
 .link{
     text-decoration: none;
