@@ -140,22 +140,35 @@ input:focus{
     cursor: pointer;
     transform: scale(1.05);
 }
-.image-header{
+.Slider{
     width: 100%;
     height: 40vh;
     margin-top: 30px;
     display: flex;
     justify-content: center;
+    padding-bottom: 10px;
 }
-.image-container{
+.Slides{
     width: 90%;
     height: 100%;
     border-radius: 20px 60px ;
-    background-image: url("../Images/Fiesta.jpg");
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    overflow: hidden;
     box-shadow: 0 7px 7px rgba(29, 29, 29, 0.2);
 }
+.Slide{
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ display: none;
+ position: absolute;
+ 
+}
+
+.displaySlide{
+    display: block;
+}
+
 .link{
     text-decoration: none;
     min-width: 80%;
