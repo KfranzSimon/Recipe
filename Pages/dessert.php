@@ -1,3 +1,6 @@
+<?php 
+include "../php/Connection.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +24,17 @@
             <h1>Dessert</h1>
         </div>
         <div class="food-list">
-            <div class="food">
+            <?php 
+            $query = "SELECT * FROM recipes";
 
-            </div>
+            $result = mysqli_query($conn, $query);
+            
+            ?>
+            <?php while ($data = mysqli_fetch_assoc($result)) {?>
+                <div class="food">
+                    <?php echo $data['Title']?>
+                </div>
+            <?php }?>
             <div class="food">
                 
             </div>
