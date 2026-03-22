@@ -25,31 +25,16 @@ include "../php/Connection.php"
         </div>
         <div class="food-list">
             <?php 
-            $query = "SELECT * FROM recipes";
+            $query = "SELECT * FROM Dessert";
 
             $result = mysqli_query($conn, $query);
             
             ?>
             <?php while ($data = mysqli_fetch_assoc($result)) {?>
-                <div class="food">
-                    <?php echo $data['Title']?>
+                <div class="food" style="background-image: url('../<?php echo $data['Image_Path'] ?>'); background-size: cover">
+                    <h2 style="color: white;"><?php echo $data['Title']?> </h2>
                 </div>
             <?php }?>
-            <div class="food">
-                
-            </div>
-            <div class="food">
-                
-            </div>
-            <div class="food">
-                
-            </div>
-            <div class="food">
-                
-            </div>
-            <div class="food">
-                
-            </div>
         </div>
     </div>
 </body>

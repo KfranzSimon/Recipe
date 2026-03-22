@@ -69,10 +69,10 @@ html, body{
 .food{
     width: 30%;
     height: 30vh;
-    background-color: pink;
     flex-shrink: 1;
     cursor: pointer;
 }
+
 @media (max-width: 575px) {
     .food {
         width: 80%;
