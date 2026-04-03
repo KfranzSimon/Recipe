@@ -1,3 +1,6 @@
+<?php 
+include "../php/Connection.php"
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,24 +24,17 @@
             <h1>Soups</h1>
         </div>
         <div class="food-list">
-            <div class="food">
+            <?php 
+            $query = "SELECT * FROM soups_main_tbl";
 
-            </div>
+            $result = mysqli_query($conn, $query);
+            ?>
+            <?php while($data = mysqli_fetch_assoc($result)) {?>
             <div class="food">
-                
+                <h2><?php echo $data['Title']?></h2>
+                <img src="../<?php echo $data['Image_Path']?>" alt="">
             </div>
-            <div class="food">
-                
-            </div>
-            <div class="food">
-                
-            </div>
-            <div class="food">
-                
-            </div>
-            <div class="food">
-                
-            </div>
+            <?php }?>
         </div>
     </div>
 </body>

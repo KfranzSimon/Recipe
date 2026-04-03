@@ -139,7 +139,7 @@ input:focus{
 }
 .food-types:hover{
     cursor: pointer;
-    transform: scale(3);
+    transform: scale(1.05);
 }
 .Slider{
     width: 100%;
