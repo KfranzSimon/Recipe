@@ -32,7 +32,9 @@ include "../php/Connection.php"
             <?php while($data = mysqli_fetch_assoc($result)) {?>
             <div class="food">
                 <h2><?php echo $data['Title']?></h2>
+                <a href="Dish_Recipe.php?id=<?php echo $data['ID'] ?>">
                 <img src="../<?php echo $data['Image_Path']?>" alt="">
+                </a>
             </div>
             <?php }?>
         </div>
