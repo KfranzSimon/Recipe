@@ -78,12 +78,37 @@ html, body {
 .food-list { 
     width: 100%; 
     display: flex; 
-    gap: 20px; 
+    gap: 50px; 
     padding: 0px 50px;
     margin-top: 20px; 
     margin-bottom: 50px; 
+    flex-wrap: wrap;
 } 
-
+.food{
+    width: 30%;
+    height: 200px;
+}
+.food img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+    position: relative;
+}
+.food h2 {
+    position: absolute;
+    z-index: 1;
+    margin: 10px 0 0 10px;
+    color: white;
+    background-color: rgba(225, 225, 225, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 2px;
+    border-radius: 20px;
+}
+.food:hover h2{
+    color: black;
+}
 /* FIX 1: Spelled correctly with "r" to match the HTML below */
 .food-discription { 
     width: 100%; 
@@ -120,7 +145,9 @@ html, body {
     height: 100%; 
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.15); 
 } 
-
+.heading{
+    padding: 4px;
+}
 @media (max-width: 575px) { 
     .menu { 
         flex-direction: row; 
@@ -144,5 +171,13 @@ html, body {
     } 
     .specification, .food-list {
         padding: 0;
+    }.second-section-ingredients{
+        width: 100%;
+    }
+    .second-section-steps{
+        width: 100%;
+    }
+    .food{
+        width:100%;
     }
 }

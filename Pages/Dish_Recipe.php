@@ -58,11 +58,17 @@ $contentsResult = mysqli_query($conn, $contentsQuery);
         <div class="second-section"> 
             <div class="second-section-ingredients"> 
                 <div class="ingredients"> 
+                    <div class="heading">
+                        <h2>Ingredients</h2>
+                    </div>
                     <!-- Ingredients loop goes here -->
                 </div> 
             </div> 
             <div class="second-section-steps"> 
                 <div class="steps"> 
+                    <div class="heading">
+                        <h2>Steps</h2>
+                    </div>
                     <!-- Steps loop goes here -->
                 </div> 
             </div> 
