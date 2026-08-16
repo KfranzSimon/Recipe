@@ -16,7 +16,7 @@ include "../php/Connection.php"
                 <h1>Filipino Secrets</h1>
             </div>
             <div class="menu">
-                <a href="../Index.html">Recipes</a>
+                <a href="../Index.php">Recipes</a>
                 <a href="#">Video</a>
             </div>
         </div>

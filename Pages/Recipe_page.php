@@ -15,7 +15,7 @@
 
       <div class="menu">
         <ul>
-          <li><a href="../Index.html">Recipe</a></li>
+          <li><a href="../Index.php">Recipe</a></li>
           <li class="dropdown">
             <a href="#">Videos</a>
             <!-- ⬇ dropdown-content MUST BE INSIDE this li -->

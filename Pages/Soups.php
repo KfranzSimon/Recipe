@@ -1,5 +1,6 @@
 <?php 
-include "../php/Connection.php"
+include "../PHP/Connection.php"
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,7 @@ include "../php/Connection.php"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soups</title>
     <link rel="stylesheet" href="../CSS/Types.css">
-</head>
+</head> 
 <body>
     <div class="parent">
         <div class="header">
@@ -16,7 +17,7 @@ include "../php/Connection.php"
                 <h1>Filipino Secrets</h1>
             </div>
             <div class="menu">
-                <a href="../Index.html">Recipes</a>
+                <a href="../Index.php">Recipes</a>
                 <a href="#">Video</a>
             </div>
         </div>
@@ -25,7 +26,7 @@ include "../php/Connection.php"
         </div>
         <div class="food-list">
             <?php 
-            $query = "SELECT * FROM soups_main_tbl";
+            $query = "SELECT * FROM dishes";
 
             $result = mysqli_query($conn, $query);
             ?>

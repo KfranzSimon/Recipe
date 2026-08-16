@@ -1,3 +1,9 @@
+<?php 
+include "PHP/Connection.php";
+
+$query = "SELECT * FROM categories";
+$result = mysqli_query($conn, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,43 +37,16 @@
         </div>
         <div class="types">
             <div class="types-main-container">
-                <a class="link" href="Pages/dessert.php">
+                <?php while($category = mysqli_fetch_assoc($result)){?>
+                <a class="link" href="Pages/Soups.php?id=<?php echo $category['ID'] ?>">
                     <div class="food-types">
                         <div class="D-Immage">
-                            <p>Dessert</p>
+                             <p><?php echo $category['category_name']; ?></p> 
                         </div>
                     </div>
                 </a>
-                <a class="link" href="Pages/Soups.php">
-                    <div  class="food-types">
-                        <div class="S-image">
-                            <p>Soups</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="link" href="Pages/Main_Course.php">
-                    <div  class="food-types">
-                        <div class="M-course">
-                            <p>Main Course</p>  
-                        </div>
-                    </div>
-                </a>
-                <a class="link" href="Pages/Appetizers.php">
-                    <div  class="food-types">
-                        <div class="Appetizers">
-                            <p>Appetizers</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="link" href="Pages/Drinks.php">
-                    <div  class="food-types">
-                        <div class="Drinks">
-                            <p>Drinks</p>
-                        </div>
-                    </div>
-                </a>
+                <?php }?>
             </div>
-            
         </div>
         <button class="to-top">to top</button>
     </div>

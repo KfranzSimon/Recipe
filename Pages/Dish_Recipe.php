@@ -4,11 +4,11 @@ include '../php/Connection.php';
 // Basic SQL Injection prevention using intval since IDs are numbers
 $ID = intval($_GET['id']); 
 
-$query = "SELECT * FROM soups_main_tbl WHERE id = $ID"; 
+$query = "SELECT * FROM dishes WHERE id = $ID"; 
 $result = mysqli_query($conn, $query); 
 $name = mysqli_fetch_assoc($result); 
 
-$contentsQuery = " SELECT i.Instructions FROM soups_main_tbl m LEFT JOIN soups_instructions i ON m.ID = i.Soups_ID WHERE m.ID = $ID "; 
+$contentsQuery = " SELECT i.Instructions FROM dishes m LEFT JOIN instructions i ON m.ID = i.Soups_ID WHERE m.ID = $ID "; 
 $contentsResult = mysqli_query($conn, $contentsQuery); 
 ?> 
 <!DOCTYPE html> 
@@ -26,7 +26,7 @@ $contentsResult = mysqli_query($conn, $contentsQuery);
                 <h1>Filipino Secrets</h1> 
             </div> 
             <div class="menu"> 
-                <a href="../Index.html">Recipes</a> 
+                <a href="../Index.php">Recipes</a> 
                 <a href="#">Video</a> 
             </div> 
         </div> 
