@@ -38,7 +38,7 @@ $result = mysqli_query($conn, $query);
         <div class="types">
             <div class="types-main-container">
                 <?php while($category = mysqli_fetch_assoc($result)){?>
-                <a class="link" href="Pages/Soups.php?id=<?php echo $category['ID'] ?>">
+                <a class="link" href="Pages/Dishes.php?id=<?php echo $category['ID'] ?>">
                     <div class="food-types">
                         <div class="D-Immage">
                              <p><?php echo $category['category_name']; ?></p> 
