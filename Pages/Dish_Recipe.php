@@ -4,19 +4,22 @@ include '../php/Connection.php';
 // Basic SQL Injection prevention using intval since IDs are numbers
 $ID = intval($_GET['id']); 
 
-$query = "SELECT * FROM dishes WHERE id = $ID"; 
-$result = mysqli_query($conn, $query); 
-$name = mysqli_fetch_assoc($result); 
+$dish_query = "SELECT Image_Path, Title, Description FROM dishes WHERE ID = $ID";
+$dish_result = mysqli_query($conn, $dish_query);
+$dish = mysqli_fetch_assoc($dish_result); // No while loop needed for a single row
 
-$contentsQuery = " SELECT i.Instructions FROM dishes m LEFT JOIN instructions i ON m.ID = i.Soups_ID WHERE m.ID = $ID "; 
-$contentsResult = mysqli_query($conn, $contentsQuery); 
+$ing_query = "SELECT ingredient_name, quantity FROM ingredients WHERE Dish_ID = $ID";
+$ing_result = mysqli_query($conn, $ing_query);
+
+$ins_query = "SELECT Steps_Num, Instructions FROM instructions WHERE Dish_ID = $ID ORDER BY Steps_Num ASC";
+$ins_result = mysqli_query($conn, $ins_query);
 ?> 
 <!DOCTYPE html> 
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title><?php echo htmlspecialchars($name['Title']); ?></title> 
+    <title><?php echo htmlspecialchars($dish['Title']); ?></title> 
     <link rel="stylesheet" href="../CSS/Types.css"> 
 </head> 
 <body> 
@@ -34,12 +37,12 @@ $contentsResult = mysqli_query($conn, $contentsQuery);
         <div class="first-section"> 
             <div class="first-section-image-cont"> 
                 <div class="first-section-image"> 
-                    <img src="../<?php echo htmlspecialchars($name['Image_Path']); ?>" alt=""> 
+                    <img src="../<?php echo htmlspecialchars($dish['Image_Path']); ?>" alt=""> 
                 </div> 
             </div> 
             <div class="first-section-details"> 
                 <div class="specification"> 
-                    <h1><?php echo htmlspecialchars($name['Title']); ?></h1> 
+                    <h1><?php echo htmlspecialchars($dish['Title']); ?></h1> 
                 </div> 
                 <div class="food-list"> 
                     <!-- FIX 3: Fixed class spelling here to match "food-discription" in Types.css -->
@@ -47,7 +50,7 @@ $contentsResult = mysqli_query($conn, $contentsQuery);
                         <h3>
                             <?php 
                             /* FIX 4: Ensure Description matches exact casing in DB (e.g. 'Description' or 'description') */
-                            echo htmlspecialchars($name['Description'] ?? $name['description'] ?? 'No description found.'); 
+                            echo htmlspecialchars($dish['Description'] ?? $dish['description'] ?? 'No description found.'); 
                             ?> 
                         </h3> 
                     </div> 
@@ -61,7 +64,11 @@ $contentsResult = mysqli_query($conn, $contentsQuery);
                     <div class="heading">
                         <h2>Ingredients</h2>
                     </div>
-                    <!-- Ingredients loop goes here -->
+                    <div class="ingredients-contents">
+                        <?php while($ingredient = mysqli_fetch_assoc($ing_result)){?>
+                            <p><?php echo htmlspecialchars($ingredient['ingredient_name']);  ?></p>
+                        <?php } ?>
+                    </div>
                 </div> 
             </div> 
             <div class="second-section-steps"> 

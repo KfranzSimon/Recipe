@@ -144,9 +144,16 @@ html, body {
     width: 80%; 
     height: 100%; 
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.15); 
+    display: flex;
+    flex-direction: column;
 } 
 .heading{
     padding: 4px;
+}
+.ingredients-contents{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
 }
 @media (max-width: 575px) { 
     .menu { 
