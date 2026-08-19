@@ -64,7 +64,8 @@ input:focus{
 .food-types{
     list-style-type: none;
     background-color: transparent;
-    color: black;
+    color: #4f4e4e;
+    letter-spacing: 0.2rem;
     font-weight: bold;
     width: 100%;
     height: 150px;

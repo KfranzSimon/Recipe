@@ -62,12 +62,19 @@ $ins_result = mysqli_query($conn, $ins_query);
             <div class="second-section-ingredients"> 
                 <div class="ingredients"> 
                     <div class="heading">
-                        <h2>Ingredients</h2>
+                        <h2>Ingredients:</h2>
                     </div>
                     <div class="ingredients-contents">
-                        <?php while($ingredient = mysqli_fetch_assoc($ing_result)){?>
-                            <p><?php echo htmlspecialchars($ingredient['ingredient_name']);  ?></p>
-                        <?php } ?>
+                        <ul>
+                            <?php while($ingredient = mysqli_fetch_assoc($ing_result)){?>
+                            <li>
+                                <p>
+                                    <?php echo htmlspecialchars($ingredient['quantity']);  ?>
+                                    <?php echo htmlspecialchars($ingredient['ingredient_name']);  ?>
+                                </p>
+                            </li>  
+                            <?php } ?>
+                        </ul>
                     </div>
                 </div> 
             </div> 
@@ -76,7 +83,17 @@ $ins_result = mysqli_query($conn, $ins_query);
                     <div class="heading">
                         <h2>Steps</h2>
                     </div>
-                    <!-- Steps loop goes here -->
+                    <div class="steps-contents">
+                        <ol>
+                            <?php while($Steps = mysqli_fetch_assoc($ins_result)){?>
+                            <li>
+                                <p>
+                                    <?php echo htmlspecialchars($Steps['Instructions']);  ?>
+                                </p>
+                            </li>  
+                            <?php } ?>
+                        </ol>
+                    </div>
                 </div> 
             </div> 
         </div> 
