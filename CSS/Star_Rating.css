@@ -1,0 +1,19 @@
+.rating{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    padding: 5px 0 30px 50px;
+}
+.rating span{
+    font-size: 1.2em;
+    letter-spacing: 0.3rem;
+}
+.star:hover, .star.active{
+    color: gold;
+    cursor: pointer;
+}
+.rating-cont{
+    width: 50%;
+    height: 50px;
+    padding: 0 0 0 50px;
+}

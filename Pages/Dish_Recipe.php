@@ -21,6 +21,7 @@ $ins_result = mysqli_query($conn, $ins_query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title><?php echo htmlspecialchars($dish['Title']); ?></title> 
     <link rel="stylesheet" href="../CSS/Types.css"> 
+    <link rel="stylesheet" href="../CSS/Star_Rating.css"> 
 </head> 
 <body> 
     <div class="parent"> 
@@ -44,6 +45,14 @@ $ins_result = mysqli_query($conn, $ins_query);
                 <div class="specification"> 
                     <h1><?php echo htmlspecialchars($dish['Title']); ?></h1> 
                 </div> 
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+                <div class="rating-cont"><p class="ratingLevel">Rating: </p></div>
                 <div class="food-list"> 
                     <!-- FIX 3: Fixed class spelling here to match "food-discription" in Types.css -->
                     <div class="food-discription"> 
@@ -98,5 +107,6 @@ $ins_result = mysqli_query($conn, $ins_query);
             </div> 
         </div> 
     </div> 
+    <script src="../JavaScript/rating.js"></script>
 </body> 
 </html>
