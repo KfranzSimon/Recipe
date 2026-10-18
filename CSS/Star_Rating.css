@@ -8,7 +8,11 @@
     font-size: 1.2em;
     letter-spacing: 0.3rem;
 }
-.star:hover, .star.active{
+.star:hover {
+    cursor: pointer;
+}
+.star.active,
+.star.hovered {
     color: gold;
     cursor: pointer;
 }

@@ -20,3 +20,14 @@ stars.forEach((star) => {
         updateStars(currentRating);
     })
 })
+
+function updateStars(rating){
+    stars.forEach((star) => {
+        const starValue = parseInt(star.getAttribute("data-value"));
+        if (starValue <= rating){
+            star.classList.add("active");
+        } else{
+            star.classList.remove("active");
+        }
+      })
+}
